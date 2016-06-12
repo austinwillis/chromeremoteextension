@@ -1,0 +1,22 @@
+{
+	"name": "Google Music Remote Server",
+	"description": "Allows google music to be controlled by a remote device",
+	"version": "0.1",
+ 	"manifest_version": 2,
+ 	"background": {
+ 		"scripts": ["background.js"],
+ 		"persistent": false
+ 	},
+ 	"icons": {
+ 		"128": "icon_128.png"
+ 	},
+ 	"permissions": [
+    	"tabs", "https://play.google.com/music/*"
+  	],
+  	"content_scripts": [
+    	{
+    		"matches": ["*://play.google.com/music/*"],
+    		"js": ["background.js"]
+    	}
+  	]
+ }
